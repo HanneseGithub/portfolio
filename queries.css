@@ -1,0 +1,243 @@
+/*  Queries specifically for dots */
+@media only screen AND (min-width: 458px) AND (max-width: 610px) {
+    .timeline #khk::after {
+      top: 265px;
+    }
+  
+    .timeline #kk::after {
+      top: 136px;
+    }
+  }
+  
+  @media only screen AND (max-width: 457px) {
+    .timeline #khk::after {
+      top: 285px;
+    }
+  
+    .timeline #kk::after {
+      top: 156px;
+    }
+}
+
+ /*** Portrait view ***/
+
+ @media only screen and (max-width: 768px) {
+  
+    /* Navigation - see töötab ainukesena*/
+    .navigation {
+      display: flex;
+      height: 70px;
+      padding: 0!important;
+      align-items: center;
+    }
+  
+    .navigation-left {
+      position: absolute;
+      left: 2%;
+    }
+  
+    /** Slides **/
+    .slide-2{
+        justify-content: space-evenly;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .slide-2 .slider-content > h1 {
+        font-size: 1.7rem;
+    }
+    .slide-2 .slider-content > h2 {
+        font-size: 1rem;
+    }
+    .slide-2 .slider-content > p {
+        font-size: 0.5rem;
+        text-align: justify;
+    }
+    .bubble-wrap {
+        width: 150px;
+        height: 150px;
+    }
+
+    .slide-5 .slider-content .slider-title > h1 {
+        font-family: 'Lato', sans-serif;
+        font-weight: 900;
+        font-size: 1.7rem;
+        text-align: center;
+      }
+  
+    .slide-3 .slider-content {
+      padding: 0;
+      height: 100%;
+      width: 85%;
+      display: block;
+      
+  }
+  
+  /* Timeline */
+  /* top 70px media query!!*/
+  
+  
+  .timeline {
+    width:100%;
+    display:block;
+  }
+  
+  .timeline div {
+    border-color: white;
+    display:block;
+    width:calc(100% - 120px);
+    min-height:20px;
+    margin-top:-3px;
+    padding:10px;
+  }
+  
+  .timeline h3 {
+    font-size: 1rem;
+  }
+  
+  .timeline p {
+    font-size: 0.7rem;
+  }
+  
+  
+  
+  
+  
+  /* Vaata üle - äkki peaks panema veel ühe kasti, et saaks flexi kasutada*/
+    .slide-4 .slider-content {
+        padding: 0;
+        height: 100%;
+        width: 85%;
+
+        /*display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;*/
+        
+    }
+
+    .slide-4 .slider-content .skills-container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-4 .skills-container .skills-rows {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height:50%;
+      width: 100%; 
+  }
+  
+    .slide-4 .first-row{
+        width: 50%;
+        max-width:50%;
+        height: 80%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+  
+    .slide-4 .second-row{
+        width: 50%;
+        max-width:50%;
+        height: 80%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+  
+    .bar-constant{
+    height: 200px;
+    width: 150px;
+  
+    }
+    .progress-bar{
+        height: 150px;
+        width: 150px;
+    }
+    .progress-title {
+        height: 30px;
+    }
+  
+  
+    /* Welcome Screen*/
+  
+    .slider-content-slide1 {
+        display: block;
+        margin: 0;
+    }
+  
+    .welcome-screen {
+        margin: 0;
+        font-size: 1.8rem;
+        padding: 3%;
+    }
+  
+    .slider h2 {
+      font-size: 20px;
+    }
+    .slider h4 {
+      font-size: 16px;
+    }
+   
+    .slider-content {
+      padding: 0 2%
+    }
+   
+    .navigation {
+      padding: 0 2%;
+    }
+   
+    .navigation-right {
+      display: none;
+    }
+   
+    .number-pagination {
+      right: 2%;
+    }
+    .slider-pagination {
+      left: 2%;
+    }
+   
+  }
+
+  @media only screen and (min-width: 768px) AND (max-width: 1100px) {
+
+    /** Slides **/
+    .slide-2{
+        justify-content: space-evenly;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .slide-2 .slider-content > h1 {
+        font-size: 1.7rem;
+    }
+    .slide-2 .slider-content > h2 {
+        font-size: 1rem;
+    }
+    .slide-2 .slider-content > p {
+        font-size: 0.5rem;
+        text-align: justify;
+    }
+    .bubble-wrap {
+        width: 150px;
+        height: 150px;
+    }
+
+    /*Miks ei tööta?*/
+    .slider-content .slider-title > h2 {
+      font-family: 'Lato', sans-serif;
+      font-weight: 900;
+      font-size: 0.5rem;
+      text-align: center;
+    }
+
+  }
+  
