@@ -13,7 +13,7 @@ $(document).ready(function(){
     $("#slider_1").prop("checked", true);
   });
   
-  $(".about-me").click(function(){
+  $(".about-me, #control-right").click(function(){
     $("#slider_2").prop("checked", true);
   });
 
@@ -29,6 +29,47 @@ $(document).ready(function(){
     $("#slider_5").prop("checked", true);
   });
 
+  // Control right navigate
+  $( ".control-right").on( "click", function() {
+    if ($('#slider_1').is(":checked")) {
+      $("#slider_2").prop("checked", true);
+      $(".about-me").focus();
+    } else if ($('#slider_2').is(":checked")) {
+      $("#slider_3").prop("checked", true);
+      $(".education").focus();
+      let x = "education";
+    } else if ($('#slider_3').is(":checked")) {
+      $("#slider_4").prop("checked", true);
+      $(".skills").focus();
+    } else if ($('#slider_4').is(":checked")) {
+      $("#slider_5").prop("checked", true);
+      $(".works").focus();
+    } else if ($('#slider_5').is(":checked")) {
+      $("#slider_1").prop("checked", true);
+      $(".home").focus();
+    }
+  });
+  
+  // Control left navigate
+  $( ".control-left").on( "click", function() {
+    if ($('#slider_1').is(":checked")) {
+      $(".works").focus();
+      $("#slider_5").prop("checked", true);
+    } else if ($('#slider_2').is(":checked")) {
+      $("#slider_1").prop("checked", true);
+      $(".home").focus();
+    } else if ($('#slider_3').is(":checked")) {
+      $("#slider_2").prop("checked", true);
+      $(".about-me").focus();
+    } else if ($('#slider_4').is(":checked")) {
+      $("#slider_3").prop("checked", true);
+      $(".education").focus();
+      let x = "education";
+    } else if ($('#slider_5').is(":checked")) {
+      $("#slider_4").prop("checked", true);
+      $(".skills").focus();
+    }
+  });
 
   // Radio bubbles trigger navbar colors
   $( ".slide-check" ).on( "click", function() {
@@ -55,7 +96,7 @@ $(document).ready(function(){
 
 
   // Validate if slider 4 is unchecked
-  $(':radio, .navbut').click(function(){
+  $(':radio, .navbut, .control-left, .control-right').click(function(){
     $('svg.radial-progress').each(function( index, value )
     { 
     if (!$('#slider_4').is(":checked")) {
@@ -65,7 +106,7 @@ $(document).ready(function(){
   })
 
   // Activate progress animation when clicking on #slider_4 radio
-  $( "#slider_4, #navslide4" ).on( "click", function() {
+  $( "#slider_4, #navslide4, .control-right, .control-left" ).on( "click", function() {
     $('svg.radial-progress').each(function( index, value ) { 
         // If #slider_4 is checked
         if ($('#slider_4').is(":checked")) {
@@ -107,7 +148,7 @@ originalViewBox = svg.getAttribute('viewBox');
 
 /* Define our media query and media query object */
 mq  = matchMedia("(max-width: 1360px)");
-mq2 = matchMedia("(max-width: 768px)");
+mq2 = matchMedia("(max-width: 835px)");
 /* Define the handler */
 updateViewBox = function(){
     if (mq.matches) {
@@ -121,7 +162,6 @@ updateViewBox = function(){
 updatePlayButton = function(){
   if (mq2.matches) {
       /* Change the viewBox dimensions to show the hexagon */
-      console.log("Hei");
       $('.arrow #mobile').removeClass('hide');
       $('.arrow #desktop').addClass('hide');
   } else {
@@ -205,7 +245,6 @@ Carousel.prototype.handleEvent = function (event) {
       this.auto(this._autoDuration);
       break;
     case 'touchstart':
-      event.preventDefault();
       this.auto(0);
       this._container.style.transition = 'none';
       this._touchAnchorX = this._touchX1 = this._touchX2;
@@ -268,3 +307,47 @@ var carousels = Array.prototype.map.call(document.querySelectorAll('.carousel'),
   carousel.auto(5000);
   return carousel;
 });
+
+// Wrap every letter in a span
+var textWrapper = document.querySelector('.welcome-animation .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.welcome-animation .letter',
+    scale: [0, 1],
+    duration: 2500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  })
+  .add({
+    targets: '.welcome-animation .letter',
+    scale: [1, 0.7],
+    duration: 2500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  })
+  .add({
+    targets: '.welcome-animation .letter',
+    scale: [0.7, 1],
+    duration: 2500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  })
+  .add({
+    targets: '.welcome-animation .letter',
+    scale: [1, 1],
+    duration: 8000,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  })
+  .add({
+    targets: '.welcome-animation .letter',
+    scale: [1, 0],
+    duration: 2500,
+    elasticity: 600,
+    delay: (el, i) => 45 * (i+1)
+  })
+
+
+  

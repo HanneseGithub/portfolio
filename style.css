@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 1;
+        z-index: 3;
     }
         
     .navigation-right a {
@@ -95,6 +95,27 @@
         transform: scale(1);
     }
 
+    .control-left {
+        position: absolute;
+        display: block;
+        left: 0;
+        top:0;
+        width: 15%;
+        height: 100%;
+        z-index: 2;
+    }
+    
+    .control-right {
+        position: absolute;
+        display: block;
+        right: 0;
+        top:0;
+        width: 15%;
+        height: 100%;
+        z-index: 2;
+    }
+    
+
     /* Slides Content Setup */
     .slide-1 {
         left: 0;
@@ -134,10 +155,31 @@
         max-width: 100%;
     }
 
-    .welcome-screen {
+    #welcome-screen {
         font-size: 4.5rem;
         font-family: lato;
     }
+
+    .welcome-animation {
+        font-family: lato;
+        position: relative;
+        font-weight: 700;
+        font-size: 4em;
+      }
+      
+      .welcome-animation .text-wrapper {
+        position: relative;
+        display: block;
+        overflow: hidden;
+      }
+      
+      .welcome-animation .letter {
+        transform-origin: 50% 100%;
+        display: inline-block;
+        line-height: 1em;
+      }
+
+    
 
     /** Second slide - About me**/
 
@@ -248,10 +290,10 @@
         width:100%;
         display:block;
     }
-        .timeline p,
-        .timeline h3 {
-            font-family: Lato, sans-serif;
-        }
+    .timeline p,
+    .timeline h3 {
+        font-family: Lato, sans-serif;
+    }
 
     .timeline div {
         border-color: white;
@@ -296,15 +338,15 @@
         border-bottom:3px solid;
         border-top-left-radius:40px;
         border-bottom-left-radius:40px;
-        }
+    }
         
     .timeline div:nth-child(even) {
-    float:right;
-    border-right:3px solid;
-    border-top:3px solid;
-    border-bottom:3px solid;
-    border-top-right-radius:40px;
-    border-bottom-right-radius:40px;
+        float:right;
+        border-right:3px solid;
+        border-top:3px solid;
+        border-bottom:3px solid;
+        border-top-right-radius:40px;
+        border-bottom-right-radius:40px;
     }
 
     /** Dots and triangles **/
@@ -351,7 +393,7 @@
         content: '';
         position: absolute;
         right: 80px;
-        top: 365px;
+        top: 361px;
         width: 0;
         height: 0;
         border-left: 20px solid #414141;
@@ -409,7 +451,6 @@
         100% {border-color: yellow}*/
         25% {border-color: red}
         100% {border-color: yellow}
-        
         }
 
     @keyframes colordots {
@@ -425,8 +466,7 @@
     /* Fourth slide content setup*/
 
     .slide-4 .slider-content {
-        padding-left: 0;
-        /*height: 460px;*/
+        padding-left: 0;s
         height: 100%;
         width: 85%;
         margin-right: auto;
@@ -590,7 +630,7 @@
 
     .carousel > nav a {
         color: white;
-        font-size: 14px;
+        font-size: 50px;
         opacity: .2;
         text-decoration: none;
     }
@@ -652,7 +692,7 @@
         bottom: 30px;
         width: 575px;
         left: 100px;
-        z-index: 1000;
+        z-index: 3;
         display: flex;
         align-items: center;
     }
@@ -796,26 +836,6 @@
             background-position: 0% 50%;
         }
     }
-
-    /* Selleks et teised asjad ka animeeriks peale slide*/
-    /*
-    .slide-radio1:checked ~ .slide-1 h2,
-    .slide-radio2:checked ~ .slide-2 h2,
-    .slide-radio3:checked ~ .slide-3 h2,
-    .slide-radio4:checked ~ .slide-4 h2,
-    .slide-radio1:checked ~ .slide-1 h4,
-    .slide-radio2:checked ~ .slide-2 h4,
-    .slide-radio3:checked ~ .slide-3 h4,
-    .slide-radio4:checked ~ .slide-4 h4,
-    .slide-radio1:checked ~ .slide-1 &gt; img,
-    .slide-radio2:checked ~ .slide-2 &gt; img,
-    .slide-radio3:checked ~ .slide-3 &gt; img,
-    .slide-radio4:checked ~ .slide-4 &gt; img {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1
-    }
-    */
 
 
 
